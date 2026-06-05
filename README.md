@@ -4,7 +4,12 @@ A production-ready Node.js API template using **Feature-Based Architecture (Vert
 
 ## 🚀 Getting Started
 1. **Install dependencies:** `npm install`
-2. **Environment Configuration:** Create a `.env` file based on `.env.example`.
+2. **Environment Configuration:** - Create a `.env` file in the root directory.
+   - Use `.env.example` as a template and set your environment variables:
+     ```text
+     PORT=5000
+     NODE_ENV=development
+     ```
 3. **Start the server:** `npm start`
 
 ## 🏗️ Architectural Philosophy
