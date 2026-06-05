@@ -1,6 +1,5 @@
 const express = require('express');
 const productRoutes = require('./src/features/products/product.routes');
-
 require('dotenv').config();
 
 const app = express();
@@ -13,8 +12,8 @@ app.get('/', (req, res) => {
     res.status(200).json({ message: 'Node.js Feature-Based API is running perfectly!' });
 });
 
-app.use('/api/products', productRoutes);
 
+app.use('/api/products', productRoutes);
 const errorHandler = require('./src/middlewares/errorHandler');
 app.use(errorHandler);
 

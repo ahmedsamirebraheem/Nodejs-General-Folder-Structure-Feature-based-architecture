@@ -1,9 +1,12 @@
-const errorHandler = (err, req, res, next) => {
-    console.error(err.stack);
-    res.status(err.statusCode || 500).json({
-        success: false,
-        message: err.message || 'Internal Server Error'
+// src/middlewares/errorHandler.js
+module.exports = (err, req, res, next) => {
+    // تسجيل الخطأ في الـ Log عشان نراجعه وقت الـ Debugging
+    console.error(`[Error Handler]: ${err.message}`);
+
+    // إرجاع رد موحد ومنظم للـ Client
+    const statusCode = err.status || 500;
+    res.status(statusCode).json({
+        status: "error",
+        message: err.message || "Internal Server Error"
     });
 };
-
-module.exports = errorHandler;
